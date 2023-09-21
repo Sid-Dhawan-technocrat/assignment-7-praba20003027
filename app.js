@@ -1,13 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const resRoutes = require('./routers/Restaurant'); 
+const resRoutes = require('./routers/Restaurant');
 
 
 const PORT = 9095;
 const app = express();
 
 
-app.use(bodyParser.json());  
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -16,8 +16,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use('/api', resRoutes);  
-
+app.use('/api', resRoutes);
 
 app.listen(PORT, () => {
     console.log(`the app has started on port:${PORT} `)
